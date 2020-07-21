@@ -1,6 +1,7 @@
 var myCanvas = document.getElementById("myCanvas");
 myCanvas.width = 1200;
 myCanvas.height = 500;
+
 var ctx = myCanvas.getContext("2d");
 
 function drawLine(ctx, startX, startY, endX, endY, color) {
@@ -104,6 +105,49 @@ var Barchart = function (options) {
         }
     }
 }
+
+function createData(data) {
+    obj = {};
+    for (let ele in data) {
+        obj[ele] = data[ele].INR;
+    }
+    var myBarchart = new Barchart(
+        {
+            canvas: myCanvas,
+            seriesName: "graph",
+            padding: 20,
+            gridScale: 20,
+            gridColor: "black",
+            data: obj,
+            colors: ["#a55ca5", "#67b6c7", "#bccd7a", "#eb9743"]
+        }
+    );
+
+    myBarchart.draw();
+    // return obj
+}
+
+function createData(data) {
+    obj = {};
+    for (let ele in data) {
+        obj[ele] = data[ele].INR;
+    }
+    var myBarchart = new Barchart(
+        {
+            canvas: myCanvas,
+            seriesName: "graph of INR rate against EUR",
+            padding: 20,
+            gridScale: 20,
+            gridColor: "black",
+            data: obj,
+            colors: ["#a55ca5", "#67b6c7", "#bccd7a", "#eb9743"]
+        }
+    );
+
+    myBarchart.draw();
+    // return obj
+}
+
 
 async function getData() {
     let url = 'https://api.exchangeratesapi.io/history?start_at=2019-01-01&end_at=2019-12-31&base=EUR&symbols=INR';
