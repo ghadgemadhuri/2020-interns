@@ -142,9 +142,9 @@ function createData(data) {
     var myBarchart = new Barchart(
         {
             canvas: myCanvas,
-            seriesName: "graph",
+            seriesName: "graph of INR exchange rate against EUR",
             padding: 20,
-            gridScale: 10,
+            gridScale: 20,
             gridColor: "black",
             data: obj,
             colors: ["#a55ca5", "#67b6c7", "#bccd7a", "#eb9743","#fde23e","#f16e23", "#57d9ff","#937e88"]
